@@ -66,7 +66,7 @@ function SearchPage() {
                                     ) : (
 
 
-                                        <Link to={`/watch/` + result.id} flex flex-col items-center>
+                                        <Link to={`/watch/` + result.id} className="flex flex-col items-center" onClick={()=>setContentType(activeTab)}>
                                             <img src={ORIGINAL_IMG_BASE_URL + result.poster_path} alt="img"
                                                 className="max-h-96 mx-auto rounded" />
                                             <h2 className="mt-2 text-xl font-bold text-center">{result?.name ? result?.name && result.name.length < 15

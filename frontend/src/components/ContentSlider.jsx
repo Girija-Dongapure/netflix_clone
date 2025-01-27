@@ -33,7 +33,7 @@ function ContentSlider({ category }) {
         }
         getContent();
     }, [contentType, category])
-  
+  console.log("category content-------------------",content);
     return (
         <div className='text-white relative px-5 md:px-20' onMouseEnter={() => setShowArrow(true)} onMouseLeave={() => setShowArrow(false)}>
             <h2 className="text-2xl font-bold mb-2">
@@ -43,7 +43,6 @@ function ContentSlider({ category }) {
                 {
                     content.map((item) => {
                         if(item.backdrop_path===null) return null
-                        if(item===null) return setShowArrow(false)
                         return (
                             <Link to={`/watch/${item.id}`} className="min-w-[250px] relative group" key={item.id}>
                                 <div className="rounded-lg overflow-hidden">
