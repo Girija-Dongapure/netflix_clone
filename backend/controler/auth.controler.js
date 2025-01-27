@@ -83,5 +83,16 @@ export async function logout(req, res) {
     console.log(err);
     res.status(500).json({success:false,message:"error while loggingout"});
 }
-    
+
 }
+export async function authCheck(req,res){
+    try{
+        console.log("req.user is -",req.user);
+        res.status(200).json({success:true,user:req.user});
+        
+    }catch(err){
+        console.log(err.message);
+        res.status(500).json({success:false,message:"Internal server error"})
+    }
+}
+    

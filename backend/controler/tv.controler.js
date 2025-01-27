@@ -41,7 +41,7 @@ export  async function getTvTrailer(req,res){
             
                 const data=await fetchTmdb(`https://api.themoviedb.org/3/tv/${id}/similar?language=en-US&page=1`);//i am not having movie details api
                 console.log(data.results);
-                 res.status(200).json({success:true,trailers:data.results})
+                 res.status(200).json({success:true,similar:data.results})
             }catch(err){
                 console.log(err);
                 res.status(500).json({success:false,message:"internal server error"})

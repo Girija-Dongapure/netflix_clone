@@ -4,7 +4,7 @@ import { User } from "../models/user.model.js";
 
 export const protectRoute = async (req, res, next) => {
     try{
-        const token = await req.cookies["jwt-netflix"];
+        const token =  req.cookies["jwt-netflix"];
         if(!token){
             return res.status(401).json({success:false,message:"Unauthorized access"});
         }
@@ -17,6 +17,7 @@ export const protectRoute = async (req, res, next) => {
             return res.status(401).json({success:false,message:"user not found"});
         }
         req.user=user;
+        console.log(user);
         next();
     }catch(error){
         console.log(error);
