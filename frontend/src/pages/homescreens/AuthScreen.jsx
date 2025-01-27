@@ -1,5 +1,5 @@
 import { ChevronRight } from 'lucide-react';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 function AuthScreen() {
@@ -7,7 +7,7 @@ function AuthScreen() {
     const navigate = useNavigate();
     const handleFormSibmit = (e) => {
         e.preventDefault();
-        navigate("/signup?email=" +email);
+        navigate("/signup?email=" + email);
     }
     return (
 
@@ -25,7 +25,7 @@ function AuthScreen() {
                 <h1 className='text-4xl md:text-6xl font-bold mb-4'>Unlimited movies, TV shows, and more</h1>
                 <p className='text-lg mb-4'>Watch anywhere. Cancel anytime.</p>
                 <p className='mb-4'>Ready to watch? Enter your email to create or restart your membership.</p>
-                <form className='flex flex-col md:flex-row gap-4 w-1/2'onSubmit={handleFormSibmit}>
+                <form className='flex flex-col md:flex-row gap-4 w-1/2' onSubmit={handleFormSibmit}>
                     <input type="email" className='w-full px-3 py-3 py-1 border border-gray-700 rounded-md bg-transparent text-white focus:outline-none focus:ring-2' placeholder='you@email.com' id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <button className='bg-red-600 text-lg lg:text-xl px-2 lg:px-5  py-1 md:py-2 rounded flex justify-center items-center text-nowrap'>Get Started
                         <ChevronRight className='size-8  ' />

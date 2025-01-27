@@ -8,7 +8,7 @@ export const fetchTmdb = async (url) => {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                    Authorization: 'Bearer ' + ENV_VARS.TMDB_API_KEY
+                Authorization: 'Bearer ' + ENV_VARS.TMDB_API_KEY
             }
         };
 
@@ -18,5 +18,5 @@ export const fetchTmdb = async (url) => {
     } catch (error) {
         console.error(error);
     }
-   
+
 }

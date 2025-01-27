@@ -69,11 +69,11 @@ function SearchPage() {
                                         <Link to={`/watch/` + result.id} flex flex-col items-center>
                                             <img src={ORIGINAL_IMG_BASE_URL + result.poster_path} alt="img"
                                                 className="max-h-96 mx-auto rounded" />
-                                            <h2 className="mt-2 text-xl font-bold text-center">{result?.name? result?.name && result.name.length < 15
+                                            <h2 className="mt-2 text-xl font-bold text-center">{result?.name ? result?.name && result.name.length < 15
                                                 ? result.name
                                                 : result?.name?.slice(0, 15) + "...." : result?.title && result.title.length < 15
-                                                    ? result.title
-                                                    : result?.title?.slice(0, 15) + "...." }</h2>
+                                                ? result.title
+                                                : result?.title?.slice(0, 15) + "...."}</h2>
                                         </Link>
 
 

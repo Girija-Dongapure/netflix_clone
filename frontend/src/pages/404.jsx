@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom'
 function NotFoundPage() {
   return (
     <div className='min-h-screen bg-cover b-center flex flex-col justify-center items-center text-white '
-    style={{backgroundImage:"url('/404.png')"}}
+      style={{ backgroundImage: "url('/404.png')" }}
     >
       <header className='absolute top-0 left-0 p-4 bg-black w-full'>
-      <Link to={"/"}>
-      <img src='/netflix-logo.png' alt="logo" className='h-8'/>
-      </Link>
+        <Link to={"/"}>
+          <img src='/netflix-logo.png' alt="logo" className='h-8' />
+        </Link>
       </header>
       <main className='text-center error-page--content z-10'>
-      <h1 className='text-7xl mb-4 font-semibold'>Lost your way?</h1>
-      <p className='mb-6 text-xl'>Sorry, we can't find that page. You'll find lots to explore on the home page</p>
-      <Link to={"/"} className='bg-white text-black py-2 px-4 rounded'>Netflix Home</Link>
+        <h1 className='text-7xl mb-4 font-semibold'>Lost your way?</h1>
+        <p className='mb-6 text-xl'>Sorry, we can&apos;t find that page. You&apos;ll find lots to explore on the home page</p>
+        <Link to={"/"} className='bg-white text-black py-2 px-4 rounded'>Netflix Home</Link>
       </main>
     </div>
   )

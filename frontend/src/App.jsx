@@ -14,19 +14,19 @@ import NotFoundPage from "./pages/404";
 
 
 function App() {
-  const {user,isAuthCheck,authCheck} = useAuthStore();
-  console.log("user is - ",user);
+  const { user, isAuthCheck, authCheck } = useAuthStore();
+  console.log("user is - ", user);
 
   useEffect(() => {
     authCheck();
-   
-  },[authCheck])
 
-  if(isAuthCheck){
+  }, [authCheck])
+
+  if (isAuthCheck) {
     return (
       <div className="h-screen">
         <div className="flex justify-center items-center h-full bg-black">
-      <Loader className="animate-spin text-red-600 size-10"/>
+          <Loader className="animate-spin text-red-600 size-10" />
         </div>
       </div>
     )
@@ -34,20 +34,20 @@ function App() {
 
   return (
     <>
-    <Routes>
-      <Route path="/" element={<HomePage/>} />
-      <Route path="/signup" element={!user?<SignUpPage/>:<Navigate to={"/"}/>}/>
-      <Route path="/login" element={!user?<LoginPage/>:<Navigate to={"/"}/>}/>
-      <Route path="/watch/:id" element={user?<WatchPage/>:<Navigate to={"/login"}/>}/>
-      <Route path="/search" element={user?<SearchPage/>:<Navigate to={"/login"}/>}/>
-      <Route path="/history" element={user?<HistoryPage/>:<Navigate to={"/login"}/>}/>
-      <Route path="/*" element={<NotFoundPage/>}/>
-    </Routes>
-    <Footer/>
-    <Toaster/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={!user ? <SignUpPage /> : <Navigate to={"/"} />} />
+        <Route path="/login" element={!user ? <LoginPage /> : <Navigate to={"/"} />} />
+        <Route path="/watch/:id" element={user ? <WatchPage /> : <Navigate to={"/login"} />} />
+        <Route path="/search" element={user ? <SearchPage /> : <Navigate to={"/login"} />} />
+        <Route path="/history" element={user ? <HistoryPage /> : <Navigate to={"/login"} />} />
+        <Route path="/*" element={<NotFoundPage />} />
+      </Routes>
+      <Footer />
+      <Toaster />
     </>
-    
-    
+
+
   )
 }
 
